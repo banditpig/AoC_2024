@@ -1,5 +1,4 @@
-use std::collections::{BTreeSet, HashMap};
-use std::path::absolute;
+use std::collections::{ HashMap};
 use sortedlist_rs::SortedList;
 use crate::utils::load_input;
 fn count_occurrences(numbers: Vec<i32>) -> HashMap<i32, usize> {
@@ -11,12 +10,12 @@ fn count_occurrences(numbers: Vec<i32>) -> HashMap<i32, usize> {
 }
 // Advent of Code 2020 - Day 1
 pub fn part2() {
-    let mut data = load_input("../data/day1.txt");
+    let data = load_input("../data/day1.txt");
     let (left, right) = make_lists(&data);
-    let mut occurences    = count_occurrences(right.to_vec());
+    let occurrences = count_occurrences(right.to_vec());
 
     let total = left.to_vec().iter().fold(0, |mut acc, x| {
-        if let Some(c) = occurences.get(x) {
+        if let Some(c) = occurrences.get(x) {
             acc += x * *c as i32;
         }
         acc
@@ -25,21 +24,10 @@ pub fn part2() {
 
 }
 pub fn part1() {
-    let mut data = load_input("../data/day1.txt");
+    let data = load_input("../data/day1.txt");
     let (left, right) = make_lists(&data);
 
     let mut total = 0;
-
-
-    // let total = (0..data.len()).fold(0, |mut acc, ix| {
-    //     acc += left[ix].abs_diff(right[ix]);
-    //     acc
-    // });
-
-    //
-    // for ix in 0 ..data.len() {
-    //     total += left[ix].abs_diff(right[ix]);
-    // }
 
     (0..data.len()).for_each(|ix| {
         total += left[ix].abs_diff(right[ix]);
