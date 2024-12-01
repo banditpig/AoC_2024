@@ -48,16 +48,3 @@ fn make_lists(data: &Vec<&str>) -> (SortedList<i32>, SortedList<i32>) {
 
     (SortedList::from(left), SortedList::from(right))
 }
-// fn make_lists(data: &mut Vec<&str>) -> (SortedList<i32>, SortedList<i32>) {
-//     let mut left = SortedList::new();
-//     let mut right = SortedList::new();
-//     data.iter().for_each(|x| {
-//         //split x into two numbers
-//         let nums = x.split("   ").collect::<Vec<&str>>();
-//         let num1 = nums[0].parse::<i32>().unwrap();
-//         let num2 = nums[1].parse::<i32>().unwrap();
-//         left.insert(num1);
-//         right.insert(num2);
-//     });
-//     (left, right)
-// }
