@@ -1,0 +1,9 @@
+[package]
+name = "AoC_2024"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+load_file = "1.0.1"
+itertools = "0.13.0"
+sortedlist-rs = "0.2.2"
