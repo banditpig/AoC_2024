@@ -8,7 +8,14 @@ fn count_occurrences(numbers: Vec<i32>) -> HashMap<i32, usize> {
     }
     counts
 }
-// Advent of Code 2020 - Day 1
+/// This function solves the second part of the first day of Advent of Code 2022.
+///
+/// It reads the input data from `../data/day1.txt`, and then it counts the occurrences of each
+/// number in the right list. Then for each number `x` in the left list, if `x` is in the right
+/// list, it adds `x * count` to the total, where `count` is the number of occurrences of `x` in
+/// the right list. Finally, it prints out the total.
+///
+
 pub fn part2() {
     let data = load_input("../data/day1.txt");
     let (left, right) = make_lists(&data);
@@ -23,6 +30,12 @@ pub fn part2() {
     println!("{}", total);
 
 }
+/// This function solves the first part of the first day of Advent of Code 2022.
+///
+/// It reads the input data from `../data/day1.txt`, and then it calculates the total difference
+/// between the elements of two sorted lists created from the input, and prints the result.
+///
+
 pub fn part1() {
     let data = load_input("../data/day1.txt");
     let (left, right) = make_lists(&data);
